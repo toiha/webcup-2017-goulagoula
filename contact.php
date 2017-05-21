@@ -41,7 +41,7 @@
             <a class="btn waves-effect waves-light">Contact</a>
             <a class="btn waves-effect waves-light">A propos</a>
             <a class="btn waves-effect waves-light">Evaluer nos univers</a>
-            <p>© 2014 Copyright Text <a class="grey-text text-lighten-4 right" href="#!">More Links</a></p>
+            <p>© 2014 Copyright </p>
             
             </div>
           </div>

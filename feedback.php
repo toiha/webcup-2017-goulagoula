@@ -23,7 +23,6 @@
         </div>
         <!-- <body class="blue lighten-4"> -->
         <div class="page">
-
             <section>
                 <div class="container">
                     <div class="row">
@@ -36,7 +35,35 @@
                         </div>
                     </div>
                 </div>
-                </section>
+            </section>
+            <section>
+            <?php 
+
+                try{
+                    $dbh = new PDO('mysql:host=localhost;dbname=goulagoula;charset=utf8', 'root', '');
+                    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                    $sth = $dbh->prepare("SELECT * FROM mini_chat");
+                    $sth->execute();
+                    $feedbacks = $sth->fetchAll();
+                }
+                catch(Exception $e){
+                    die('Erreur : '.$e->getMessage());
+                }
+        
+            ?>
+                <div class="container">
+                     <ul class="collection">
+                     <?php foreach ($feedbacks as $key => $feedback): ?>
+                        <li class="collection-item avatar">
+                            <strong class="title"><?= $feedback['pseudo'] ?></strong>
+                            <p><?= $feedback['message'] ?></p>
+                          <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+                        </li>
+                     <?php endforeach ?>
+                    </ul>
+                </div>
+            </section>
         </div>
         <footer class="page-footer">
           <div class="footer-copyright">
@@ -47,7 +74,7 @@
             <a class="btn waves-effect waves-light">A propos</a>
             <a class="btn waves-effect waves-light">Evaluer nos univers</a>
             <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
-            <p>© 2014 Copyright Text <a class="grey-text text-lighten-4 right" href="#!">More Links</a></p>
+            <p>© 2014 Copyright Text </p>
             
             </div>
           </div>
@@ -65,43 +92,17 @@
         <script>
 
             $(document).ready(function () {
-                $('.univers').hide();
 
                 $('.titre-site').typeIt({
                     speed: 50,
                     lifeLike: false,
                     autoStart: false,
-                    callback: function () {
-                        $('.univers').show();
-                        $('.univers1').addClass('animated fadeInLeft');
-                        $('.univers2').addClass('animated fadeInUp');
-                        $('.univers3').addClass('animated fadeInRight');
-
-                    }
                 })
-                        .tiType('Bienvenue')
-                        .tiSettings({speed: 50})
-                        .tiType(' à Androla')
-                        .tiDelete(2)
-                        .tiType('idLand');
-
-                $('.modal').modal();
-                $('ul.tabs').tabs();
-                // $('.carousel.carousel-slider').carousel({fullWidth: true, duration: 100});
-
-                // $('.carousel.carousel-slider').carousel({fullWidth: true});
-
-                  $('.linkScroll').bind('click.smoothscroll',function (e) {
-                    e.preventDefault();
-                    var target = this.hash,
-                        $target = $(target);
-
-                    $('html, body').stop().animate( {
-                      'scrollTop': $target.offset().top
-                    }, 900, 'swing', function () {
-                      window.location.hash = target;
-                    } );
-                  } );
+                .tiType('FeedBack')
+                .tiSettings({speed: 50})
+                .tiType(' Androla')
+                .tiDelete(2)
+                .tiType('idLand');
             });
         </script>
     </body>

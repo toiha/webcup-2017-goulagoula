@@ -62,7 +62,7 @@
                     <a class="btn waves-effect waves-light">A propos</a>
                     <a class="btn waves-effect waves-light" href="#modalEval">Evaluer nos univers</a>
                     <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
-                    <p>© 2014 Copyright Text <a class="grey-text text-lighten-4 right" href="#!">More Links</a></p>
+                    <p>© 2014 Copyright Text </p>
                 </div>
             </div>
         </footer>
