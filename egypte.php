@@ -67,10 +67,11 @@
                     <div class="input-field col s4">
                         <input type="number" name="nb_child" placeholder="Nombre Enfant">
                     </div>
+                    <input type="hidden" name="univers" value="Egypte">
                 </div>
         </div>
         <div class="modal-footer">
-            <button class="btn waves-effect waves-green teal" name="egypte_sejour_validation">Valider ma résa</button>
+            <button class="btn waves-effect waves-green teal">Valider ma résa</button>
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
         </div>
     </div>

@@ -25,22 +25,28 @@
         <div class="page">
 
             <section>
-                <div class="container center-align">
-                    <div class="">
-                        <h1><i class="fa fa-android "></i> <span class="titre-site"></span></h1>        
-                        <h3 class="slogan-site"></h3>        
+                <div class="container">
+                    <div class="row">
+                        <div class="col s2">
+                            <img src="img/logo2.png" class="logo-site">
+                        </div>
+                        <div class="col s10">
+                            <h1> <span class="titre-site"></span></h1>        
+                            <h3 class="slogan-site"></h3>        
+                        </div>
                     </div>
                 </div>
-
                 </section>
         </div>
         <footer class="page-footer">
           <div class="footer-copyright">
             <div class="container">
+            <a class="btn waves-effect waves-light" href="/">Accueil</a>
             <a class="btn waves-effect waves-light">Galerie</a>
             <a class="btn waves-effect waves-light">Contact</a>
-            <a class="btn waves-effect waves-light">Apropos</a>
+            <a class="btn waves-effect waves-light">A propos</a>
             <a class="btn waves-effect waves-light">Evaluer nos univers</a>
+            <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
             <p>© 2014 Copyright Text <a class="grey-text text-lighten-4 right" href="#!">More Links</a></p>
             
             </div>

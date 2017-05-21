@@ -1,8 +1,8 @@
 <?php 
-var_dump($_POST);
-$errors = [];
+	
+	$errors = [];
 	foreach ($_POST as $key => $value) {
-		if(empty($value)){
+		if($value == ""){
 			$errors[] = $key;
 		}
 	}
@@ -16,29 +16,20 @@ $errors = [];
         catch(Exception $e){
             die('Erreur : '.$e->getMessage());
         }
-		
-		$execute_ok = false;
-		if(isset($_POST['egypte_sejour_validation'])){
-			$req = $pdo->prepare('INSERT INTO reserv_sejour (debut, fin, hotel, nb_room, nb_adulte, nb_enfant) VALUES(?,?,?,?,?,?)');
-			unset($_POST['egypte_sejour_validation']);
-	        $execute_ok = $req->execute($_POST);
-		}
+		$sth = $pdo->prepare('INSERT INTO reserv_sejour (debut, fin, hotel, nb_room, nb_adulte, nb_enfant, univers) VALUES(:debut, :fin, :hotel, :nb_room, :nb_adulte, :nb_enfant, :univers)');
 
-		var_dump($errors);
+		$sth->bindParam(':debut', $_POST['debut_sejour']);
+		$sth->bindParam(':fin', $_POST['fin_sejour']);
+		$sth->bindParam(':hotel', $_POST['hotel']);
+		$sth->bindParam(':nb_room', $_POST['nb_room']);
+		$sth->bindParam(':nb_adulte', $_POST['nb_adulte']);
+		$sth->bindParam(':nb_enfant', $_POST['nb_child']);
+		$sth->bindParam(':univers', $_POST['univers']);
 
-
-		if(isset($_POST['pseudo']) AND empty($errors)){
-			$req = $pdo->prepare('INSERT INTO mini_chat (pseudo, message) VALUES(?,?)');
-	        $req->execute($_POST['pseudo'],$_POST['message']);
-	        header('Location: /?eval=ok');
-		}
-
-		if( $execute_ok ){
-			header('Location: index.php');
-			exit;
-		}
+	    $sth->execute();
+    	header('Location: /?eval=ok');
 	}else{
-		die("il y a des erreurs");
+		header('Location: /?eval=not_ok');
 	}
 ?>
 <!DOCTYPE html>

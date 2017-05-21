@@ -22,7 +22,7 @@
     Détails univers
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
     </div>
 </div>
 
@@ -31,15 +31,48 @@
     Achat billet
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
     </div>
 </div>
 
-<div id="modalCowBoyResa" class="modal">
-    <div class="modal-content">
-    Resa de séjour
+<form method="post" action="cible.php" id="CoWBoy_sejour_validation">
+    <div id="modalCowBoyResa" class="modal">
+        <div class="modal-content">
+            <h3>Résa séjour</h3>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <select name="hotel">
+                            <option value="sakouli">Sakouli</option>
+                            <option value="trevani">Trevani</option>
+                            <option value="3baobab">3Baobab</option>
+                        </select>
+                        <label>Hotel de séjour</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="date" name="debut_sejour">
+                        <label class="active" for="debut_sejour">Début de séjour</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="date" name="fin_sejour">
+                        <label class="active" for="fin_sejour">Fin de séjour</label>
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <input type="number" name="nb_room" placeholder="Nombre de chambre">
+                    </div>
+                    
+                    <div class="input-field col s4">
+                        <input type="number" name="nb_adulte" placeholder="Nombre Adulte">
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="number" name="nb_child" placeholder="Nombre Enfant">
+                    </div>
+                    <input type="hidden" name="univers" value="CoWBoy">
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn waves-effect waves-green teal">Valider ma résa</button>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-</div>
+</form>
