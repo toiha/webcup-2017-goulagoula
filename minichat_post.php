@@ -6,7 +6,7 @@ try
 
 {
 
-    $bdd = new PDO('mysql:host=localhost;dbname=goulagoula;charset=utf8', 'root', '');
+$dbh = new PDO('mysql:host=mayotte.goulagoula.webcup.fr;dbname=goulagoula', "goulagoula", "[BGbKJb63OF]");
 
 }
 

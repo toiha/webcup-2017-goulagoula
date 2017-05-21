@@ -1,7 +1,7 @@
 <?php 
 
 	try{
-        $pdo = new PDO('mysql:host=localhost;dbname=goulagoula;charset=utf8', 'root', '');
+$dbh = new PDO('mysql:host=mayotte.goulagoula.webcup.fr;dbname=goulagoula', "goulagoula", "[BGbKJb63OF]");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }

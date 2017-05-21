@@ -40,12 +40,13 @@
             <?php 
 
                 try{
-                    $dbh = new PDO('mysql:host=localhost;dbname=goulagoula;charset=utf8', 'root', '');
+    $dbh = new PDO('mysql:host=mayotte.goulagoula.webcup.fr;dbname=goulagoula', "goulagoula", "[BGbKJb63OF]"); 
                     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                     $sth = $dbh->prepare("SELECT * FROM mini_chat");
                     $sth->execute();
                     $feedbacks = $sth->fetchAll();
+                    $dbh = null;
                 }
                 catch(Exception $e){
                     die('Erreur : '.$e->getMessage());
@@ -65,17 +66,18 @@
                 </div>
             </section>
         </div>
+        <?php include "eval.php" ?>
+        <?php include "fcontact.php" ?>
         <footer class="page-footer">
           <div class="footer-copyright">
             <div class="container">
-            <a class="btn waves-effect waves-light" href="/">Accueil</a>
-            <a class="btn waves-effect waves-light">Galerie</a>
-            <a class="btn waves-effect waves-light">Contact</a>
-            <a class="btn waves-effect waves-light">A propos</a>
-            <a class="btn waves-effect waves-light">Evaluer nos univers</a>
-            <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
-            <p>© 2014 Copyright  GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
-            
+                <a class="btn waves-effect waves-light" href="/">Accueil</a>
+                <a class="btn waves-effect waves-light">Galerie</a>
+                <a class="btn waves-effect waves-light" href="#modalContact">Contact</a>
+                <a class="btn waves-effect waves-light" href="about.php">A propos</a>
+                <a class="btn waves-effect waves-light" href="#modalEval">Evaluer nos univers</a>
+                <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
+                <p>© 2014 Copyright  GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
             </div>
           </div>
         </footer>

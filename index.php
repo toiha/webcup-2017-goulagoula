@@ -54,12 +54,13 @@
             </section>
         </div>
         <?php include "eval.php" ?>
+        <?php include "fcontact.php" ?>
         <footer class="page-footer">
             <div class="footer-copyright">
                 <div class="container">
                     <a class="btn waves-effect waves-light" href="/">Accueil</a>
                     <a class="btn waves-effect waves-light">Galerie</a>
-                    <a class="btn waves-effect waves-light">Contact</a>
+                    <a class="btn waves-effect waves-light" href="#modalContact">Contact</a>
                     <a class="btn waves-effect waves-light">A propos</a>
                     <a class="btn waves-effect waves-light" href="#modalEval">Evaluer nos univers</a>
                     <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
