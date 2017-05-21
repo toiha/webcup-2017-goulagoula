@@ -37,11 +37,12 @@
         <footer class="page-footer">
           <div class="footer-copyright">
             <div class="container">
+            <a class="btn waves-effect waves-light" href="/">Accueil</a>
             <a class="btn waves-effect waves-light">Galerie</a>
             <a class="btn waves-effect waves-light">Contact</a>
             <a class="btn waves-effect waves-light">A propos</a>
             <a class="btn waves-effect waves-light">Evaluer nos univers</a>
-            <p>© 2014 Copyright </p>
+            <p>© 2014 Copyright  GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
             
             </div>
           </div>

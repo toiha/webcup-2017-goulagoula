@@ -74,7 +74,7 @@
             <a class="btn waves-effect waves-light">A propos</a>
             <a class="btn waves-effect waves-light">Evaluer nos univers</a>
             <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
-            <p>© 2014 Copyright Text </p>
+            <p>© 2014 Copyright  GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
             
             </div>
           </div>

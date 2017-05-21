@@ -25,27 +25,25 @@
         <div class="page">
 
             <section>
-                <div class="container center-align">
-                    <div class="">
-                        <h1><i class="fa fa-android "></i> <span class="titre-site"></span></h1>        
-                        <h3 class="slogan-site"></h3>        
-                    </div>
-                </div>
-
-                </section>
-        </div>
-        <footer class="page-footer">
-          <div class="footer-copyright">
             <div class="container">
-            <a class="btn waves-effect waves-light" href="/">Accueil</a>
-            <a class="btn waves-effect waves-light">Galerie</a>
-            <a class="btn waves-effect waves-light">Contact</a>
-            <a class="btn waves-effect waves-light">Apropos</a>
-            <a class="btn waves-effect waves-light">Evaluer nos univers</a>
-            <p>© 2014 Copyright GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
-            
+            <p></p>
+                <img src="img/team.jpg" alt="" style="max-width: 100%;">
             </div>
-          </div>
+            </section>
+        </div>
+        <?php include "eval.php" ?>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <a class="btn waves-effect waves-light" href="/">Accueil</a>
+                    <a class="btn waves-effect waves-light">Galerie</a>
+                    <a class="btn waves-effect waves-light">Contact</a>
+                    <a class="btn waves-effect waves-light">A propos</a>
+                    <a class="btn waves-effect waves-light" href="#modalEval">Evaluer nos univers</a>
+                    <a class="btn waves-effect waves-light" href="feedback.php">FeedBack</a>
+                    <p>© 2014 Copyright  GoulaGoula - <a href="team-dev.php">Team de Dev</a></p>
+                </div>
+            </div>
         </footer>
 
         <!--Import jQuery before materialize.js-->
@@ -82,22 +80,58 @@
 
                 $('.modal').modal();
                 $('ul.tabs').tabs();
+                $('select').material_select();
+                // $('#modalEgypteResa').modal('open');
                 // $('.carousel.carousel-slider').carousel({fullWidth: true, duration: 100});
 
                 // $('.carousel.carousel-slider').carousel({fullWidth: true});
 
-                  $('.linkScroll').bind('click.smoothscroll',function (e) {
+                $('.linkScroll').bind('click.smoothscroll', function (e) {
                     e.preventDefault();
                     var target = this.hash,
-                        $target = $(target);
+                            $target = $(target);
 
-                    $('html, body').stop().animate( {
-                      'scrollTop': $target.offset().top
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top
                     }, 900, 'swing', function () {
-                      window.location.hash = target;
-                    } );
-                  } );
+                        window.location.hash = target;
+                    });
+                });
+
+                // Attach a submit handler to the form
+                // $( "#egypte_sejour_validation" ).submit(function( event ) {
+                //     // Stop form from submitting normally
+                //     event.preventDefault();
+                     
+                //     // Get some values from elements on the page:
+                //     var $form = $( this ),
+                //     debut_sejour = $form.find( "input[name='debut_sejour']" ).val(),
+                //     fin_sejour = $form.find( "input[name='fin_sejour']" ).val(),
+                //     hotel = $form.find( "input[name='hotel']" ).val(),
+                //     nb_room = $form.find( "input[name='nb_room']" ).val(),
+                //     nb_adulte = $form.find( "input[name='nb_child']" ).val(),
+                //     nb_child = $form.find( "input[name='nb_child']" ).val(),
+                //     url = $form.attr( "action" );
+                     
+                //     // Send the data using post
+                //     var posting = $.ajax( url, { 
+                //         debut_sejour: debut_sejour, 
+                //         fin_sejour: fin_sejour, 
+                //         hotel: hotel, 
+                //         nb_room: nb_room, 
+                //         nb_adulte: nb_adulte, 
+                //         nb_child: nb_child,
+                //         success: function(data){
+                //             console.log(data);
+                //         },
+                //         error: (function(data) {
+                //             console.log(data);
+                //         })
+                //     });
+                // });
             });
+
+
         </script>
     </body>
 </html>
