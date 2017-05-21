@@ -1,6 +1,6 @@
 <div class="univers univers2 waves-effect waves-light card">
     <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="img/cowboy.jpg">
+        <img class="activator" src="img/cowboy2.jpg">
     </div>
     <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">Far West<i class="material-icons right">more_vert</i></span>

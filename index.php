@@ -120,36 +120,36 @@
                 });
 
                 // Attach a submit handler to the form
-                $( "#egypte_sejour_validation" ).submit(function( event ) {
-                    // Stop form from submitting normally
-                    event.preventDefault();
+                // $( "#egypte_sejour_validation" ).submit(function( event ) {
+                //     // Stop form from submitting normally
+                //     event.preventDefault();
                      
-                    // Get some values from elements on the page:
-                    var $form = $( this ),
-                    debut_sejour = $form.find( "input[name='debut_sejour']" ).val(),
-                    fin_sejour = $form.find( "input[name='fin_sejour']" ).val(),
-                    hotel = $form.find( "input[name='hotel']" ).val(),
-                    nb_room = $form.find( "input[name='nb_room']" ).val(),
-                    nb_adulte = $form.find( "input[name='nb_child']" ).val(),
-                    nb_child = $form.find( "input[name='nb_child']" ).val(),
-                    url = $form.attr( "action" );
+                //     // Get some values from elements on the page:
+                //     var $form = $( this ),
+                //     debut_sejour = $form.find( "input[name='debut_sejour']" ).val(),
+                //     fin_sejour = $form.find( "input[name='fin_sejour']" ).val(),
+                //     hotel = $form.find( "input[name='hotel']" ).val(),
+                //     nb_room = $form.find( "input[name='nb_room']" ).val(),
+                //     nb_adulte = $form.find( "input[name='nb_child']" ).val(),
+                //     nb_child = $form.find( "input[name='nb_child']" ).val(),
+                //     url = $form.attr( "action" );
                      
-                    // Send the data using post
-                    var posting = $.ajax( url, { 
-                        debut_sejour: debut_sejour, 
-                        fin_sejour: fin_sejour, 
-                        hotel: hotel, 
-                        nb_room: nb_room, 
-                        nb_adulte: nb_adulte, 
-                        nb_child: nb_child,
-                        success: function(data){
-                            console.log(data);
-                        },
-                        error: (function(data) {
-                            console.log(data);
-                        })
-                    });
-                });
+                //     // Send the data using post
+                //     var posting = $.ajax( url, { 
+                //         debut_sejour: debut_sejour, 
+                //         fin_sejour: fin_sejour, 
+                //         hotel: hotel, 
+                //         nb_room: nb_room, 
+                //         nb_adulte: nb_adulte, 
+                //         nb_child: nb_child,
+                //         success: function(data){
+                //             console.log(data);
+                //         },
+                //         error: (function(data) {
+                //             console.log(data);
+                //         })
+                //     });
+                // });
             });
 
 
