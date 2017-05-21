@@ -1,5 +1,5 @@
 <?php 
-
+var_dump($_POST);
 $errors = [];
 	foreach ($_POST as $key => $value) {
 		if(empty($value)){
@@ -7,7 +7,7 @@ $errors = [];
 		}
 	}
 
-	if(!empty($errors)){
+	if(empty($errors)){
 		try{
             $pdo = new PDO('mysql:host=localhost;dbname=goulagoula;charset=utf8', 'root', '');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -19,9 +19,18 @@ $errors = [];
 		
 		$execute_ok = false;
 		if(isset($_POST['egypte_sejour_validation'])){
-			$req = $pdo->prepare('INSERT INTO reserv_sejour (debut, fin, hotel, nb_room, nb_adulte, nb_enfant) VALUES(?, ?, ?, ?, ?, ?)');
+			$req = $pdo->prepare('INSERT INTO reserv_sejour (debut, fin, hotel, nb_room, nb_adulte, nb_enfant) VALUES(?,?,?,?,?,?)');
 			unset($_POST['egypte_sejour_validation']);
 	        $execute_ok = $req->execute($_POST);
+		}
+
+		var_dump($errors);
+
+
+		if(isset($_POST['pseudo']) AND empty($errors)){
+			$req = $pdo->prepare('INSERT INTO mini_chat (pseudo, message) VALUES(?,?)');
+	        $req->execute($_POST['pseudo'],$_POST['message']);
+	        header('Location: /?eval=ok');
 		}
 
 		if( $execute_ok ){
@@ -29,7 +38,7 @@ $errors = [];
 			exit;
 		}
 	}else{
-		var_dump($errors);		die;
+		die("il y a des erreurs");
 	}
 ?>
 <!DOCTYPE html>

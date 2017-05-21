@@ -1,21 +1,20 @@
 
 <div id="modalEval" class="modal">
+<form action="cible_eval.php" method="post">
     <div class="modal-content">
         <h4>Evaluation</h4>
         <div class="row">
-            <form action="" method="post">
               <div class="row">
                 <div class="input-field col s12">
                   <input type="text" name="pseudo" id="pseudo" />
                   <label for="pseudo">Pseudo</label>
                 </div>
                 <div class="input-field col s12">
-                  <textarea id="message" class="materialize-textarea"></textarea>
+                  <textarea id="message" class="materialize-textarea" name="message"></textarea>
                   <label for="message">Message</label>
                 </div>
               </div>
           </div>
-        </form>
         <center>
             <div class="rating rating2">
                 <a href="#!?eval=5" title="Give 5 stars">★</a>
@@ -27,7 +26,8 @@
         </center>
     </div>
     <div class="modal-footer">
-        <button class="btn waves-effect waves-green teal " type="submit">Envoyer</button>
+        <button class="btn waves-effect waves-green teal "  type="submit">Envoyer</button>
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
+  </form>
 </div>
